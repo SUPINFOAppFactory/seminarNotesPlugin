@@ -1,0 +1,53 @@
+<div class="holder padding-zero  has-bottom sticky-bottom-menu clearfix">
+	<div class="scrollable infinite-scroll-parent">
+		<div class="seminar-notes layout4" ng-if="WidgetHome.data.content" infinite-scroll="WidgetHome.loadMore()"
+			 infinite-scroll-distance="1"
+			 data-infinite-container=".infinite-scroll-parent"
+			 infinite-scroll-disabled="WidgetHome.busy">
+			<!--<div class="plugin-slide">-->
+				<!--<img src="../../../styles/media/holder-16x9.png">-->
+			<!--</div>-->
+			<div id="carousel" ng-if="WidgetHome.data.content.carouselImages.length"
+				 build-fire-carousel=""
+				 ng-style="WidgetHome.data.content.carouselImages.length > 0 ? {'min-height': (9 * deviceWidth / 16) + 'px' } : {}"></div>
+			<div class="padded padding-bottom-five" ng-if="WidgetHome.showDescription(WidgetHome.data.content.description)">
+				<p class="margin-zero" ng-bind-html="WidgetHome.safeHtml(WidgetHome.data.content.description)"></p>
+			</div>
+			<div class="plugin-banner hasBackground" >
+				<div class="plugin-slide" ng-repeat="item in WidgetHome.items" ng-if="isFetchedAllData">
+					<img ng-hide="item.data.listImage" src="../../../styles/media/holder-16x9.png">
+					<img ng-show="item.data.listImage" class="border-radius-three" ng-if="item.data.listImage" load-image="16x9"
+                         crop-width="deviceWidth" crop-height="183" crop-type="crop"
+                         data-final-src="{{item.data.listImage}}">
+					<div class="blackLayer"></div>
+					<div ng-hide="item.data.listImage" class="backgroundLayer" style="background:url('../../../styles/media/holder-16x9.png');"></div>
+					<div ng-show="item.data.listImage" class="backgroundLayer" style="background:url({{item.data.listImage}});"></div>		
+					<div class="item-text" ng-click="WidgetHome.openDetails(item.id)">
+						<p class="ellipsis item-title margin-zero whiteTheme text-center">{{item.data.title}}</p>
+						<p class="ellipsis item-summary margin-zero whiteTheme text-center">{{item.data.summary}} </p>
+						<p class="ellipsis item-date margin-zero whiteTheme text-center">{{item.data.publishDate | date}}</p>
+					</div>
+					<!-- Use these theme classes when inactive/not selected -->
+					<div ng-if="WidgetHome.currentLoggedInUser" class="bookmark-icon"
+                     ng-class="item.isBookmarked?'whiteBackgroundTheme':'primaryBackgroundTheme'" ng-click="WidgetHome.addToBookmark(item,item.isBookmarked, $index)">
+						<span class="icon icon-bookmark2  " ng-class="item.isBookmarked?'text-primary':'whiteTheme'"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom fixed-bottom primaryBackgroundTheme clearfix bottom-zero">
+		<div class="col-xs-3 pull-left text-center">
+			<a class="whiteTheme stretch active">Items</a>
+		</div>
+		<div class="col-xs-3 pull-left text-center">
+			<a class="whiteTheme stretch" ng-click="WidgetHome.showItemNotes()">My Notes</a>
+		</div>
+		<div class="col-xs-3 pull-left text-center">
+			<a class="whiteTheme stretch" ng-click="WidgetHome.showBookmarkItems()">Bookmarks</a>
+		</div>
+		<div class="col-xs-3 pull-left text-center">
+			<a class="whiteTheme stretch" ng-click="WidgetHome.showSearchPage()">Search</a>
+		</div>
+	</div>
+</div>

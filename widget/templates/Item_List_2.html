@@ -1,0 +1,63 @@
+<div class="holder padding-zero  has-bottom sticky-bottom-menu clearfix">
+    <div class="scrollable infinite-scroll-parent" >
+        <div class="seminar-notes layout3">
+            <!--<div class="plugin-slide">-->
+            <!--<img src="../../../styles/media/holder-16x9.png">-->
+            <!--</div>-->
+            <div id="carousel" ng-if="WidgetHome.data.content.carouselImages.length"
+                 build-fire-carousel=""
+                 ng-style="WidgetHome.data.content.carouselImages.length > 0 ? {'min-height': (9 * deviceWidth / 16) + 'px' } : {}"></div>
+            <div class="padded padding-bottom-five"  ng-if="WidgetHome.showDescription(WidgetHome.data.content.description)">
+                <p class="margin-zero" ng-bind-html="WidgetHome.safeHtml(WidgetHome.data.content.description)"></p>
+            </div>
+            <div class="list-layout" ng-if="WidgetHome.data.content" infinite-scroll="WidgetHome.loadMore()"
+                 infinite-scroll-distance="1"
+                 data-infinite-container=".infinite-scroll-parent"
+                 infinite-scroll-disabled="WidgetHome.busy">
+                <div class="list-item" ng-repeat="item in WidgetHome.items" ng-if="isFetchedAllData">
+                    <div class="list-item-media text-left overflow-hidden">
+                        <div class="list-media-holder pull-left"  ng-if="item.data.listImage">
+                            <img class="border-radius-three"
+                                  load-image="16x9" crop-width="120" crop-height="70" crop-type="crop"
+                                  data-final-src="{{item.data.listImage}}">
+                        </div>
+                        <div class="list-item-copy text-left padding-left-ten padding-right-ten">
+                            <div class="copy-holder" ng-click="WidgetHome.openDetails(item.id)">
+                                <p class="ellipsis margin-zero text-primary margin-top-five">
+                                  {{item.data.title}}
+                                </p>
+
+                                <p class="ellipsis margin-zero bodyTextTheme">
+                                    {{item.data.summary}}
+                                </p>
+
+                                <p class="small ellipsis margin-zero bodyTextTheme opacity-seventy">
+                                    <i>{{item.data.publishDate | date}}</i>
+                                </p>
+                            </div>
+                            <div ng-if="WidgetHome.currentLoggedInUser" class="bookmark-holder"
+                                      ng-click="WidgetHome.addToBookmark(item,item.isBookmarked, $index)">
+                                <span class="icon icon-bookmark2 " ng-class="!item.isBookmarked?'bodyTextTheme opacity-seventy':''"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="bottom fixed-bottom primaryBackgroundTheme clearfix bottom-zero">
+        <div class="col-xs-3 pull-left text-center">
+            <a class="whiteTheme stretch active">Items</a>
+        </div>
+        <div class="col-xs-3 pull-left text-center">
+            <a class="whiteTheme stretch" ng-click="WidgetHome.showItemNotes()">My Notes</a>
+        </div>
+        <div class="col-xs-3 pull-left text-center">
+            <a class="whiteTheme stretch" ng-click="WidgetHome.showBookmarkItems()">Bookmarks</a>
+        </div>
+        <div class="col-xs-3 pull-left text-center">
+            <a class="whiteTheme stretch" ng-click="WidgetHome.showSearchPage()">Search</a>
+        </div>
+    </div>
+</div>
