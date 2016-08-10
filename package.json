@@ -1,7 +1,7 @@
 {
   "name": "seminarNotesPlugin",
   "version": "1.0.0",
-  "description": "This SUPINFO AppFActory plugin will show seminar notes.",
+  "description": "This plugin will show seminar notes.",
   "main": "index.js",
   "scripts": {
     "postinstall": "./node_modules/.bin/bower install",
