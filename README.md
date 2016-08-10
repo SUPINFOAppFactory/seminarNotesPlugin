@@ -15,7 +15,7 @@ All the changes in control panel will reflect dynamically on widget section . It
 ####Add New Item: 
 App owner can add a new item. In add new item there will be again two tabs :
 
-- Item Content  :  [Carousel](https://github.com/BuildFire/sdk/wiki/BuildFire-Carousel-Component) CRUD is provided. Various information related to item is there like title, summary, list image, publish date  etc. App owner can also add description [WYSIWYG](https://github.com/BuildFire/sdk/wiki/How-to-use-the-WYSIWYG-editor) and [dynamic links](https://github.com/BuildFire/sdk/wiki/How-to-use-action-Items). Item title is the only mandatory field. 
+- Item Content  :  [Carousel](https://github.com/SUPINFOAppFactory/sdk-master/wiki/BuildFire-Carousel-Component) CRUD is provided. Various information related to item is there like title, summary, list image, publish date  etc. App owner can also add description [WYSIWYG](https://github.com/SUPINFOAppFactory/sdk-master/wiki/How-to-use-the-WYSIWYG-editor) and [dynamic links](https://github.com/SUPINFOAppFactory/sdk-master/wiki/How-to-use-action-Items). Item title is the only mandatory field. 
 
 - Item Design : Provide option to set background image for particular item.
 
@@ -113,17 +113,17 @@ tag:**seminarBookmarks**
 
 Miscellaneous references:
 
-1. https://github.com/BuildFire/sdk/wiki/How­to­use­Datastore
+1. https://github.com/SUPINFOAppFactory/sdk-master/wiki/How-to-use-Datastore
 
-2. https://github.com/BuildFire/sdk/wiki/User­Data:­Save­user­data­from­the­widget
+2. https://github.com/SUPINFOAppFactory/sdk-master/wiki/User-Data:-Save-user-data-from-the-widget
 
-3. https://github.com/BuildFire/sdk/wiki/BuildFire­Thumbnail­Component
+3. https://github.com/SUPINFOAppFactory/sdk-master/wiki/BuildFire-Thumbnail-Component
 
-4. https://github.com/BuildFire/sdk/wiki/Spinners
+4. https://github.com/SUPINFOAppFactory/sdk-master/wiki/Spinners
 
-5. https://github.com/BuildFire/sdk/wiki/How­to­use­Messaging­to­sync­your­Control­to­Widget
+5. https://github.com/SUPINFOAppFactory/sdk-master/wiki/How-to-use-Messaging-to-sync-your-Control-to-Widget
 
-6. https://github.com/BuildFire/sdk/wiki/How­to­use­Navigation
+6. https://github.com/SUPINFOAppFactory/sdk-master/wiki/How-to-use-Navigation
 
-7. https://github.com/BuildFire/sdk/wiki/Search­Operators
+7. https://github.com/SUPINFOAppFactory/sdk-master/wiki/Search-Operators
   
