@@ -1,5 +1,9 @@
 # seminarNotesPlugin 
 
+### Plugin overview
+
+http://support.appdocumentation.com/knowledge-base/seminar-and-lecture-notes-plugin-tutorial/
+
 ###Technology stack: 
 ● AngularJS
 
